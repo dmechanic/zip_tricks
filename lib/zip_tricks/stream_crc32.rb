@@ -2,12 +2,7 @@
 
 # A simple stateful class for keeping track of a CRC32 value through multiple writes
 class ZipTricks::StreamCRC32
-  STRINGS_HAVE_CAPACITY_SUPPORT = begin
-    String.new('', capacity: 1)
-    true
-  rescue ArgumentError
-    false
-  end
+  STRINGS_HAVE_CAPACITY_SUPPORT = false
   CRC_BUF_SIZE = 1024 * 512
   private_constant :STRINGS_HAVE_CAPACITY_SUPPORT, :CRC_BUF_SIZE
 
